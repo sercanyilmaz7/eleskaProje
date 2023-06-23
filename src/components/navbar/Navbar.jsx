@@ -174,7 +174,10 @@ const Navbar = () => {
                 {currentUser && (
                   <>
                     <div className=" relative text-white  " role="button">
-                      <GiShoppingCart className="text-3xl" />
+                    <Link to="/basket">
+                        {" "}
+                        <GiShoppingCart className="text-3xl" />
+                      </Link>
                       <span className="absolute bottom-5 left-6 text-[0.75rem] font-thin">
                         0
                       </span>
