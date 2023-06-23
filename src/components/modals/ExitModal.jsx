@@ -22,7 +22,7 @@ const ExitModal = ({isModalOpen,handleCancel,handleOk}) => {
         <Button
           className="okBtn bg-red-primary text-white sm:w-22 rounded-none sm:text-sm "
           key="link"
-          href="/"
+          href="/login"
           type="danger"
           onClick={handleOk}
         >

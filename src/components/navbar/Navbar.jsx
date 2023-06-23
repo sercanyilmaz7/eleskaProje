@@ -52,7 +52,7 @@ const Navbar = () => {
   ];
   const address=["Ev Adresi","İş Adresi", "İstanbul","Diğer"]
 
-  const currentUser = true;
+  const currentUser = false;
   return (
     <>
       <nav className="sticky p-4 top-0 z-50 w-full bg-[#E12A32] border-b border-gray-200 flex-wrap xsm:text-xs">
