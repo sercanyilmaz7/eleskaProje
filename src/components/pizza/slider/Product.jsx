@@ -4,8 +4,8 @@ const Products = () => {
   const slides = [
     {
       image:
-        "https://www.dominos.de/ManagedAssets/DE/product/PCSP/DE_PCSP_all_hero_11910.jpg?v-910499353",
-      title: "This is title 1",
+        "https://img.freepik.com/free-photo/spicy-pide-with-meat-red-pepper_140725-1231.jpg?w=740&t=st=1687429372~exp=1687429972~hmac=8918c99c21fa6bd512dc2cbadc288c5bf0a6067ae16d8395f5019a68d5713835",
+      title: "Kıymalı Pide",
     },
     {
       image:
