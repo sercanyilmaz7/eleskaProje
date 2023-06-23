@@ -9,7 +9,7 @@ const Category = ({ slides }) => {
     <div className="w-full mt-10 ">
       <div className="md:w-[90%] lg:w-[88%] mx-auto ">
         <div className="flex items-center justify-center mb-10 sm:flex-row gap-20">
-          <div className=" items-center md:w-1/2 lg:w-1/3 p-2  w-1/2 ">
+          <div className=" items-center md:w-1/2 lg:w-1/3   w-1/2 ">
             <h3 className="font-semibold text-2xl leading-10 py-3">
               Zengin Kategoriler
             </h3>
@@ -33,11 +33,11 @@ const Category = ({ slides }) => {
             />
           </div>
         </div>
-        <div className="flex justify-center flex-wrap md:w-[90%] xl:w-[80%] mx-auto">
+        <div className="flex justify-center flex-wrap md:w-[90%] xl:w-[80%] mx-auto ">
           {slides.map((slide, index) => {
             return (
               <div
-                className="category-card grid md:w-[90%] lg:w-[88%] mx-auto"
+                className="category-card grid md:w-[70%] lg:w-[40%] mx-auto "
                 key={index}
               >
                 <a href="#">

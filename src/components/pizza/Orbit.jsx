@@ -62,7 +62,7 @@ const Orbit = ({ radius }) => {
                   <div className="hover:text-2xl hover:cursor-pointer text-xl">
                     <Popup
                       trigger={
-                        <p className="w-44 font-bold font-sans ">
+                        <p className="w-48 hover:w-56 font-bold font-sans ">
                           {menu[orbit.menuItem].title}
                         </p>
                       }
