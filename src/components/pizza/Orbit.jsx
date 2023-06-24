@@ -30,7 +30,7 @@ const Orbit = ({ radius }) => {
   );
   const getOrbitClassName = (index) => {
     if (index === (menu.length - 1) / 2) {
-      return "orbit flex flex-row-reverse pr-10 justify-end";
+      return "orbit flex flex-row-reverse justify-center";
     } else if (index < menu.length / 2) {
       return "orbit flex flex-row-reverse pr-6 text-right";
     } else {
