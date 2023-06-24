@@ -2,18 +2,19 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Category = ({ slides }) => {
-  const image = "assest/homeGrid/335.jpg";
-
+  const image =
+    "https://www.tastingtable.com/img/gallery/why-you-should-always-knead-bread-dough-by-hand/l-intro-1652977262.jpg";
+  // const red = "img/red.jpg";
   return (
     <div className="w-full mt-10 ">
-      <div className="md:w-[80%] lg:w-[66%] mx-auto ">
+      <div className="md:w-[90%] lg:w-[88%] mx-auto ">
         <div className="flex items-center justify-center mb-10 sm:flex-row gap-20">
-          <div className=" items-center md:w-1/2 lg:w-1/3 p-2  w-1/2 ">
+          <div className=" items-center md:w-1/2 lg:w-1/3   w-1/2 ">
             <h3 className="font-semibold text-2xl leading-10 py-3">
               Zengin Kategoriler
             </h3>
             <p className="leading-7 py-5">
-              Geniş menümüzle herkesindamak zevkine düşkünseçenekler bulunur.
+              Geniş menümüzle herkesin damak zevkine düşkün seçenekler bulunur.
               Özenle seçilmiş, şeflerimiz tarafından hazırlanan özel
               tariflerimizi deneyin.
             </p>
@@ -23,14 +24,22 @@ const Category = ({ slides }) => {
               </button>
             </Link>
           </div>
-          <div className="right sm:inline-block md:basis-1/2 lg:basis-1/3 flex justify-center sm:hidden ">
-            <img src={image} alt="" className="rounded-full w-40 h-40" />
+          <div className="right sm\:inline-block md:basis-1/2 lg:basis-1/3 flex justify-center sm:hidden ">
+            {/* <img src={red} alt="" className="" /> */}
+            <img
+              src={image}
+              alt=""
+              className=" rounded-full w-60 h-60 object-cover"
+            />
           </div>
         </div>
-        <div className="flex justify-center flex-wrap">
+        <div className="flex justify-center flex-wrap md:w-[90%] xl:w-[80%] mx-auto ">
           {slides.map((slide, index) => {
             return (
-              <div className="category-card grid" key={index}>
+              <div
+                className="category-card grid md:w-[70%] lg:w-[40%] mx-auto "
+                key={index}
+              >
                 <a href="#">
                   <div
                     className="category-card-image"

@@ -7,6 +7,7 @@ import About from "../pages/About";
 import MultiStepForm from "../components/stepper/MultiStepForm";
 import Error from "../components/not404/Error";
 import Login from "../pages/Login";
+import Campaign from "../pages/Campaign";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/register" element={ <MultiStepForm  />} />
         <Route path="/login" element={<Login/>}/>
+        <Route path="/campaigns" element={<Campaign/>}/>
         {/* <Route path="" element={}/>  */}
         {/* <Header /> */}
         {/* <Menu /> */}
