@@ -25,6 +25,8 @@ const AppRouter = () => {
         <Route path="/register" element={<MultiStepForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/campaigns" element={<Campaign />} />
+        <Route path="/myaccount" element={<MainAcc />} />
+      
 
         {/* <Route path="" element={}/>  */}
         {/* <Header /> */}
@@ -37,7 +39,6 @@ const AppRouter = () => {
         {/* <Connect /> */}
         <Route path="*" element={<Error />} />
       </Routes>
-      <MainAcc />
       <Footer />
     </BrowserRouter>
   );

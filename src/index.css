@@ -91,8 +91,7 @@
           flex
           items-center;
   }
-
-  #slider {
+  .slider {
     @apply w-full
           h-full      
           whitespace-nowrap          
@@ -227,44 +226,39 @@ input {
 
 /********* Ant Modal ******/
 
-.ant-modal .ant-modal-content{
+.ant-modal .ant-modal-content {
   border-radius: 0% !important;
   padding: 2.5rem !important;
-  border: solid 2px
-
+  border: solid 2px;
 }
 
-.ant-modal-footer{
+.ant-modal-footer {
   margin-top: 1.5rem !important;
   margin-right: 2.3rem;
 }
 
-.ant-btn{
+.ant-btn {
   height: 38px !important;
   padding: 8px 20px !important;
   font-weight: bold;
 }
-.cancelBtn{
+.cancelBtn {
   border: solid 1.8px;
 }
 
-.cancelBtn:hover{
+.cancelBtn:hover {
   background-color: #e12a32 !important;
   color: white !important;
   border: solid 2px black !important;
-
 }
 
-
-.okBtn:hover{
+.okBtn:hover {
   background-color: white !important;
   color: #e12a32 !important;
   border: solid 2px black;
-
-
 }
 
-.md-position{
+.md-position {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important ;

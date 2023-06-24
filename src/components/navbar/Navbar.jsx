@@ -1,20 +1,14 @@
-import { Link } from "react-router-dom";
-
-import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { FiPhoneCall } from "react-icons/fi";
+import { Link} from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
-import { AiFillInfoCircle } from "react-icons/ai";
-
-import { RiLoginBoxFill } from "react-icons/ri";
-import { FiCheckCircle } from "react-icons/fi";
-import { RxAvatar } from "react-icons/rx";
 import { CiGps } from "react-icons/ci";
 import { MdFavorite } from "react-icons/md";
-
 import { useState } from "react";
 import ExitModal from "../modals/ExitModal";
+import Sliderbar from "./Sliderbar";
 
 const Navbar = () => {
+  
+  const [currentUser, setcurrentUser] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -27,14 +21,6 @@ const Navbar = () => {
     setIsModalOpen(false);
   };
 
-  const sideBarMenü = [
-    { icon: <RxAvatar />, title: "Profile", url: "/" },
-    { icon: <AiFillInfoCircle />, title: "Hakında", url: "/about" },
-    { icon: <MdOutlineRestaurantMenu />, title: "Menü", url: "/menu" },
-    { icon: <FiPhoneCall />, title: "İletişim", url: "/contact" },
-    { icon: <RiLoginBoxFill />, title: "Giriş Yap", url: "/login" },
-    { icon: <FiCheckCircle />, title: "Üye Ol", url: "/register" },
-  ];
   const navbarMenü = [
     { title: "Hakkında", url: "/about" },
     { title: "Menü", url: "/menu" },
@@ -48,11 +34,12 @@ const Navbar = () => {
     { title: "İletişim", url: "/contact" },
   ];
   const address = ["Ev Adresi", "İş Adresi", "İstanbul", "Diğer"];
-
-  const currentUser = false;
   return (
     <>
-      <nav className="fixed p-4 top-0 z-50 w-full bg-[#E12A32] border-b border-gray-200 flex-wrap xsm:text-xs">
+      <nav
+        className="p-4 z-50 w-full bg-[#E12A32] border-b border-gray-200 flex-wrap xsm:text-xs"
+        style={{ position: "fixed", top: "0" }}
+      >
         <div className=" flex-wrap ">
           <div className="flex items-center justify-between  gap-2   ">
             <div className="flex items-center justify-start gap-x-6 ">
@@ -88,7 +75,7 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-
+            {/* ***************** ADRES SEÇ ***************** */}
             <div className=" xl:ml-44">
               <div className=" flex justify-center items-center lg:gap-2 text-white text-lg  ">
                 <CiGps className="mr-1" />
@@ -115,7 +102,7 @@ const Navbar = () => {
                     />
                   </svg>
                 </button>
-                {/* Dropdown menu */}
+                {/* ***************** ADRES SEÇ Dropdown menu ***************** */}
                 <div
                   id="dropdown"
                   className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
@@ -124,9 +111,8 @@ const Navbar = () => {
                     className="py-2 text-sm text-gray-700"
                     aria-labelledby="dropdownDefaultButton"
                   >
-                    {address.map((adres,index) => (
-         
-                      <li>
+                    {address.map((adres, index) => (
+                      <li key={index}>
                         <a
                           href="#"
                           className="block px-4 py-2 hover:bg-gray-100 "
@@ -139,7 +125,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-
+            {/* ***************** Giriş-Çıkış Yapılırsa ***************** */}
             <div className="flex items-center">
               <div className="flex gap-6 items-center">
                 <div className=" md:hidden lg:flex gap-6 text-white text-base xl:text-lg  ">
@@ -174,10 +160,7 @@ const Navbar = () => {
                 {currentUser && (
                   <>
                     <div className=" relative text-white  " role="button">
-                    <Link to="/basket">
-                        {" "}
-                        <GiShoppingCart className="text-3xl" />
-                      </Link>
+                      <GiShoppingCart className="text-3xl" />
                       <span className="absolute bottom-5 left-6 text-[0.75rem] font-thin">
                         0
                       </span>
@@ -188,14 +171,10 @@ const Navbar = () => {
                         0
                       </span>
                     </div>
-                  </>
-                )}
-                {currentUser && (
-                  <>
-                    <div className="smx:hidden sm:hidden lg:block">
+                    <div className="block">
                       <button
                         type="button"
-                        className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 "
+                        className="flex text-sm rounded-full  "
                         aria-expanded="false"
                         data-dropdown-toggle="dropdown-user"
                       >
@@ -208,6 +187,7 @@ const Navbar = () => {
                     </div>
                   </>
                 )}
+               
                 <div
                   className=" z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow "
                   id="dropdown-user"
@@ -220,7 +200,7 @@ const Navbar = () => {
                       className="text-sm font-medium text-gray-900 truncate "
                       role="none"
                     >
-                      neil.sims@flowbite.com
+                      neil.sims@eleska.com
                     </p>
                   </div>
                   <ul className="py-1" role="none">
@@ -230,27 +210,19 @@ const Navbar = () => {
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
                         role="menuitem"
                       >
-                        Dashboard
+                        Ayarlar
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="myaccount"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
                         role="menuitem"
                       >
-                        Settings
-                      </a>
+                        Hesabım
+                      </Link>
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
-                        role="menuitem"
-                      >
-                        Earnings
-                      </a>
-                    </li>
+
                     <li>
                       <button
                         href="#"
@@ -259,7 +231,7 @@ const Navbar = () => {
                         type="button"
                         onClick={showModal}
                       >
-                        Sign out
+                        Çıkış Yap
                       </button>
                       <ExitModal
                         isModalOpen={isModalOpen}
@@ -274,44 +246,14 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div className="h-[65px]"></div>
+      <div className="h-[61px]"></div>
 
-      <aside
-        id="logo-sidebar"
-        className="bg-[#E12A32] lg:hidden fixed smx:top-12 sm:top-10
-         z-40 w-64 h-screen pt-20 transition-transform -translate-x-full border-r border-gray-200  "
-        aria-label="Sidebar"
-      >
-        <div className="  h-full px-3  overflow-y-auto bg-[#E12A32]">
-          <ul className="space-y-2 font-medium ">
-            {sideBarMenü.map((event) => (
-              <li>
-                <Link
-                  to={event.url}
-                  hreventf="#"
-                  className="flex items-center p-2 text-white  rounded-lg hover:bg-gray-100   hover:text-[#E12A32]"
-                >
-                  {/* <svg
-                    aria-hidden="true"
-                    className="w-6 h-6 text-white transition duration-75  group-hover:text-gray-900 "
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
-                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
-                  </svg> */}
-                  {event.icon}
-
-                  <span className="flex-1 ml-3 whitespace-nowrap">
-                    {event.title}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </aside>
+      {/* ***************** SLİDEBAR ***************** */}
+      <Sliderbar
+        navbarMenü={navbarMenü}
+        filteredNavbarMenü={filteredNavbarMenü}
+        currentUser={currentUser}
+      />
     </>
   );
 };
