@@ -6,7 +6,7 @@ const MainAcc = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <div className="flex ">
+    <div className="">
       <Account activeTab={activeTab} setActiveTab={setActiveTab} />
       <MultiAcc activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
