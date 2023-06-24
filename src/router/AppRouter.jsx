@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import Campaign from "../pages/Campaign";
 import Basket from "../components/basket/Basket";
 import Checkout from "../components/basket/Checkout";
+import MainAcc from "../components/hesap/MainAcc";
 
 const AppRouter = () => {
   return (
@@ -21,9 +22,9 @@ const AppRouter = () => {
         <Route path="/menu" element={<Menu />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/about" element={<About />} />
-        <Route path="/register" element={ <MultiStepForm  />} />
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/campaigns" element={<Campaign/>}/>
+        <Route path="/register" element={<MultiStepForm />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/campaigns" element={<Campaign />} />
 
         {/* <Route path="" element={}/>  */}
         {/* <Header /> */}
@@ -36,6 +37,7 @@ const AppRouter = () => {
         {/* <Connect /> */}
         <Route path="*" element={<Error />} />
       </Routes>
+      <MainAcc />
       <Footer />
     </BrowserRouter>
   );
