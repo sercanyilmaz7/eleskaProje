@@ -67,7 +67,6 @@
   bottom: 0px;
   padding: 50px 50px 0px 50px;
   background-position: unset;
-  
 }
 
 /* ***************** Slider *****************   */
@@ -92,8 +91,7 @@
           flex
           items-center;
   }
-
-  #slider {
+  .slider {
     @apply w-full
           h-full      
           whitespace-nowrap          
@@ -122,7 +120,7 @@
 
   .slider-card {
     @apply w-[250px]
-       h-[300px]
+       h-[250px]
        bg-white
        rounded-[10px]
        inline-block
@@ -148,18 +146,121 @@
 
 /* Category Card style */
 
-.category-card{
-  @apply
-   w-[300px]
-   h-[300px]
+.category-card {
+  @apply w-[250px]
+   h-[250px]
    bg-white
    inline-block
-   mx-[1rem]
+   mx-[1rem];
 }
-.category-card-image{
-  @apply
-      w-full
+.category-card-image {
+  @apply w-full
       h-[210px]
       bg-gray-600
-      bg-cover
+      bg-cover;
+}
+
+/********* Multi Stepper ******/
+
+.details__wrapper {
+  max-width: 550px;
+  margin: 2rem auto 0.5rem auto;
+}
+.form__item {
+  margin-bottom: 1.6em;
+}
+label,
+input {
+  display: block;
+  width: 100%;
+}
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+.input__error input {
+  border-color: #e12a32;
+}
+.error__feedback {
+  color: #e12a32;
+}
+
+.steps {
+  display: flex !important;
+  justify-content: space-around !important;
+}
+
+.ant-steps-item-icon {
+  background-color: #e12a32 !important;
+  color: white !important;
+  border: 1px solid white !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ant-steps-item-icon svg {
+  color: white !important;
+}
+
+.ant-steps-item-icon span {
+  color: white !important;
+}
+
+.ant-steps-item-container > .ant-steps-item-tail::after {
+  background-color: red !important;
+}
+
+.ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title::after {
+  background-color: red !important;
+}
+
+/********* Ant Modal ******/
+
+.ant-modal .ant-modal-content {
+  border-radius: 0% !important;
+  padding: 2.5rem !important;
+  border: solid 2px;
+}
+
+.ant-modal-footer {
+  margin-top: 1.5rem !important;
+  margin-right: 2.3rem;
+}
+
+.ant-btn {
+  height: 38px !important;
+  padding: 8px 20px !important;
+  font-weight: bold;
+}
+.cancelBtn {
+  border: solid 1.8px;
+}
+
+.cancelBtn:hover {
+  background-color: #e12a32 !important;
+  color: white !important;
+  border: solid 2px black !important;
+}
+
+.okBtn:hover {
+  background-color: white !important;
+  color: #e12a32 !important;
+  border: solid 2px black;
+}
+
+.md-position {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important ;
+  transform: translate(-50%, -50%) !important;
 }
